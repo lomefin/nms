@@ -1,0 +1,20 @@
+<article class="nms-post" data-uuid="<%= @post.uuid %>">
+  <h1 class="nms-post-title"><%= @post.title %></h1>
+  <p class="nms-post-header">
+    <small class="nms-post-channel" data-value="<%= @post.channel %>">Channel: <%= @post.channel %></small>
+    <% if @post.published_at %>
+    <br />
+    <small class="nms-post-publication-date" data-value="<%= @post.published_at %>">Published: <%= l @post.published_at %></small>
+    <% end %>
+  </p>
+  <p class="nms-post-message"><%= @post.message %></p>
+</article>
+<ul class="nms-post-actions">
+  <li><%= link_to 'Edit', edit_admin_post_path(uuid: @post.uuid) %></li>
+  <% if @post.published_at.nil? %>
+    <li><%= link_to 'Publish', publish_admin_post_path(uuid: @post.uuid), method: :put %></li>
+  <% else %>
+    <li><%= link_to 'Unpublish', unpublish_admin_post_path(uuid: @post.uuid), method: :put %></li>
+  <% end %>
+  <li><%= link_to 'All posts', admin_posts_path %></li>
+</ul>

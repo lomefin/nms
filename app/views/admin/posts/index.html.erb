@@ -1,0 +1,7 @@
+<h1>Posts</h1>
+<ul class="nms-post-list">
+  <%= render partial: "post", collection: @posts %>
+</ul>
+<ul class="nms-posts-actions">
+  <li><%= link_to "New post", new_admin_post_path %></li>
+</ul>

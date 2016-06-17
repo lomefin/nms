@@ -1,0 +1,11 @@
+<%= form_for [:admin, post] do |p| %>
+  <%= p.label :channel %>
+  <%= p.text_field :channel %> <br />
+  <%= p.label :title %>
+  <%= p.text_field :title %> <br />
+  <%= p.label :message %>
+  <%= p.text_area :message %> <br />
+  <%= p.label :url %>
+  <%= p.text_field :url %> <br />
+  <%= submit_tag  %>
+<% end %>

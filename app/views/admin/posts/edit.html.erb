@@ -1,0 +1,6 @@
+<%= render partial: "form", locals: {post: @post} %>
+
+<ul class="nms-edit-post-options">
+  <li><%= link_to 'Back',  admin_post_path(uuid: @post.uuid) %></li>
+  <li><%= link_to 'All posts', admin_posts_path %></li>
+</ul>
